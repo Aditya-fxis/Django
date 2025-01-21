@@ -47,8 +47,8 @@ def loginUser(request):
     return render(request, 'login.html')
 
 def logoutUser(request):
-    print("Before logout:", request.session)
+    # print("Before logout:", request.session)
     logout(request)
-    print("After logout:", request.session)
-    messages.success(request, "Logged out successfully.")
+    # print("After logout:", request.session)
+    # messages.success(request, "Logged out successfully.")
     return redirect("/login")
