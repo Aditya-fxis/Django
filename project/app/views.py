@@ -4,13 +4,14 @@ from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required(login_url='/login/') 
+# @login_required(login_url='/login/') 
 def index(request):
     print(request.user)
-    if not request.user.is_authenticated:
+    # if not request.user.is_authenticated:
+    if request.user.is_anonymous:
         return redirect("/login")
     return render(request, 'index.html')
 
